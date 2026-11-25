@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Hors ligne · CY Planner</title>
+<style>
+  :root { color-scheme: light dark; --bg:#f7f7fb; --fg:#0f172a; --mut:#64748b; --pri:#4f46e5; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b0d14; --fg:#e5e7eb; --mut:#94a3b8; --pri:#818cf8; } }
+  body { margin:0; min-height:100dvh; display:grid; place-items:center; background:var(--bg); color:var(--fg);
+         font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; text-align:center; padding:24px; }
+  .i { font-size:48px } h1 { font-size:20px; margin:12px 0 4px } p { color:var(--mut); margin:0 0 20px }
+  button { background:var(--pri); color:#fff; border:0; border-radius:10px; padding:12px 20px; font-size:15px; font-weight:600 }
+</style>
+</head>
+<body>
+  <div>
+    <div class="i">📡</div>
+    <h1>Tu es hors ligne</h1>
+    <p>Les pages déjà consultées restent accessibles.<br/>Reconnecte-toi pour synchroniser.</p>
+    <button onclick="location.reload()">Réessayer</button>
+  </div>
+</body>
+</html>

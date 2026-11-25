@@ -1,0 +1,8 @@
+# /etc/caddy/Caddyfile — HTTPS automatique (Let's Encrypt) pour CY Planner sur Raspberry Pi
+borisbiloute.freeboxos.fr {
+	encode zstd gzip
+	request_body {
+		max_size 100MB
+	}
+	reverse_proxy 127.0.0.1:3100
+}

@@ -1,0 +1,21 @@
+# /etc/systemd/system/cy-planner.service
+[Unit]
+Description=CY Planner (Next.js)
+After=network.target
+
+[Service]
+Type=simple
+User=cyplanner
+WorkingDirectory=/opt/cy-planner
+Environment=NODE_ENV=production
+Environment=TZ=Europe/Paris
+ExecStart=/usr/bin/npm run start:vps
+Restart=always
+RestartSec=5
+# Durcissement
+NoNewPrivileges=true
+ProtectSystem=full
+ReadWritePaths=/opt/cy-planner/data /opt/cy-planner/uploads /opt/cy-planner/.next
+
+[Install]
+WantedBy=multi-user.target

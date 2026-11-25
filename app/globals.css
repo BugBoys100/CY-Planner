@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+
+:root {
+  --background: #f7f7fb;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --accent: #eef2ff;
+  --accent-foreground: #3730a3;
+  --destructive: #dc2626;
+  --ring: #6366f1;
+  --cm: #4f46e5;
+  --td: #059669;
+  --tp: #d97706;
+  --autre: #64748b;
+  --revision: #db2777;
+  --exam: #dc2626;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0d14;
+    --foreground: #e5e7eb;
+    --card: #131722;
+    --card-foreground: #e5e7eb;
+    --muted: #1c2130;
+    --muted-foreground: #94a3b8;
+    --border: #262c3d;
+    --input: #2a3144;
+    --primary: #818cf8;
+    --primary-foreground: #0b0d14;
+    --accent: #1e1b4b;
+    --accent-foreground: #c7d2fe;
+    --destructive: #f87171;
+    --ring: #818cf8;
+    --cm: #818cf8;
+    --td: #34d399;
+    --tp: #fbbf24;
+    --autre: #94a3b8;
+    --revision: #f472b6;
+    --exam: #f87171;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-ring: var(--ring);
+  --color-cm: var(--cm);
+  --color-td: var(--td);
+  --color-tp: var(--tp);
+  --color-autre: var(--autre);
+  --color-revision: var(--revision);
+  --color-exam: var(--exam);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius-xl: 0.875rem;
+  --animate-in: fade-in 0.15s ease-out;
+  --animate-sheet: sheet-up 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes sheet-up {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+* { border-color: var(--border); }
+
+html { -webkit-tap-highlight-color: transparent; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+/* Safe areas iOS (PWA standalone) */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+.pt-safe { padding-top: env(safe-area-inset-top); }
+.mobile-content-pad { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+@media (min-width: 768px) { .mobile-content-pad { padding-bottom: 2rem; } }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Rendu Markdown des notes */
+.prose-notes { line-height: 1.65; font-size: 0.95rem; overflow-wrap: anywhere; }
+.prose-notes h1 { font-size: 1.5rem; font-weight: 700; margin: 1.2em 0 0.5em; }
+.prose-notes h2 { font-size: 1.25rem; font-weight: 700; margin: 1.1em 0 0.4em; }
+.prose-notes h3 { font-size: 1.05rem; font-weight: 600; margin: 1em 0 0.3em; }
+.prose-notes p, .prose-notes ul, .prose-notes ol, .prose-notes pre, .prose-notes blockquote, .prose-notes table { margin: 0.6em 0; }
+.prose-notes ul { list-style: disc; padding-left: 1.4em; }
+.prose-notes ol { list-style: decimal; padding-left: 1.4em; }
+.prose-notes li > input[type="checkbox"] { margin-right: 0.4em; }
+.prose-notes li:has(> input[type="checkbox"]) { list-style: none; margin-left: -1.2em; }
+.prose-notes a { color: var(--primary); text-decoration: underline; }
+.prose-notes code { background: var(--muted); padding: 0.1em 0.35em; border-radius: 0.3em; font-size: 0.88em; }
+.prose-notes pre { background: var(--muted); padding: 0.8em 1em; border-radius: 0.6em; overflow-x: auto; }
+.prose-notes pre code { background: none; padding: 0; }
+.prose-notes blockquote { border-left: 3px solid var(--border); padding-left: 0.9em; color: var(--muted-foreground); }
+.prose-notes table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+.prose-notes th, .prose-notes td { border: 1px solid var(--border); padding: 0.35em 0.6em; }
+.prose-notes hr { margin: 1.2em 0; }

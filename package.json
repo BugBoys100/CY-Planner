@@ -1,0 +1,51 @@
+{
+  "name": "cytech-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:studio": "drizzle-kit studio",
+    "vapid": "node scripts/generate-vapid.mjs",
+    "icons": "node scripts/generate-icons.mjs",
+    "sync": "tsx scripts/sync.ts",
+    "test:logic": "tsx scripts/test-logic.ts",
+    "start:vps": "next start -H 127.0.0.1 -p 3100"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.2.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
+    "drizzle-orm": "^0.45.4",
+    "lucide-react": "^1.80.0",
+    "next": "^15.5.29",
+    "node-cron": "^4.6.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^3.7.1",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.1",
+    "@types/react-dom": "^19.3.0",
+    "@types/web-push": "^3.6.4",
+    "drizzle-kit": "^0.31.11",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "postcss": "^8.5.23"
+  }
+}
